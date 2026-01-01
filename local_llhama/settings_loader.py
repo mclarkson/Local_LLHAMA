@@ -492,7 +492,7 @@ class SettingLoaderClass:
             print(
                 f"{self.class_prefix_message} {LogLevel.WARNING} No Ollama embedding model specified, using default"
             )
-            self.ollama_embedding_model = "nomic-embed-text"
+            self.ollama_embedding_model = "nomic-embed-text:latest"
 
         try:
             print(

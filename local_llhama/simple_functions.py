@@ -51,7 +51,7 @@ class SimpleFunctions:
         self.allow_internet_searches = allow_internet_searches
         self.pg_client = pg_client
         self.ollama_host = ollama_host
-        self.ollama_embedding_model = ollama_embedding_model or "nomic-embed-text"
+        self.ollama_embedding_model = ollama_embedding_model or "nomic-embed-text:latest"
         self.similarity_threshold = (
             0.5  # Default threshold for memory search similarity
         )
@@ -710,7 +710,7 @@ class SimpleFunctions:
             import requests
             ollama_url = self.ollama_host if self.ollama_host.startswith("http") else f"http://{self.ollama_host}"
             response = requests.post(
-                f"{ollama_url}/api/embeddings",
+                f"{ollama_url}/api/embed",
                 json={"model": self.ollama_embedding_model, "prompt": query},
                 timeout=30,
             )

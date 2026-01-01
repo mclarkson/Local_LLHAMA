@@ -31,19 +31,29 @@
     },
     "allowed_entities": {
       "description": "Explicit list of entity IDs that are allowed to be controlled. If empty, all entities in allowed_domains (except exclusions) are permitted.",
-      "value": []
+      "value": [
+        "light.kitchen_light",
+        "light.desk_light",
+        "light.couch_light",
+        "climate.as35pbphra_pre",
+        "climate.as25pbphra_pre"
+      ]
     },
     "description": "Home Assistant integration configuration",
     "exclusion_dict": {
       "description": "Dictionary of entity name patterns to exclude from device discovery",
-      "value": {}
+      "value": {
+        "exclude_name1": "APC1400",
+        "exclude_name2": "Trust1500",
+        "exclude_name3": "EATON"
+      }
     }
   },
   "ollama": {
     "description": "Ollama LLM server configuration",
     "host": {
       "description": "Ollama server host and port (e.g., '192.168.1.100:11434' or 'localhost:11434'). Will use OLLAMA_IP environment variable if not set.",
-      "value": "192.168.1.90:11434"
+      "value": "192.168.88.239:11434"
     }
   },
   "safety": {

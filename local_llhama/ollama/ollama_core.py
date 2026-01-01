@@ -43,7 +43,7 @@ class OllamaClient:
         model: str = "qwen3-14b",
         pg_client=None,
         conversation_loader=None,
-        embedding_model: str = "nomic-embed-text",
+        embedding_model: str = "nomic-embed-text:latest",
     ):
         """
         Initialize Ollama client with connection details.
@@ -54,7 +54,7 @@ class OllamaClient:
         @param system_prompt Optional system prompt override
         @param pg_client Optional PostgreSQLClient for storing message embeddings
         @param conversation_loader Optional ConversationLoader for accessing previous conversations
-        @param embedding_model Embedding model name to use (default: nomic-embed-text)
+        @param embedding_model Embedding model name to use (default: nomic-embed-text:latest)
         """
         self.class_prefix_message = "[OllamaClient]"
         # Ensure host has http:// scheme

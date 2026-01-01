@@ -28,7 +28,7 @@ class EmbeddingClient:
     def __init__(
         self,
         host: str = "http://localhost:11434",
-        model: str = "embeddinggemma",
+        model: str = "embeddinggemma:latest",
         pg_client=None,
     ):
         """
@@ -149,7 +149,7 @@ class EmbeddingClient:
         """
         try:
             response = requests.post(
-                f"{self.host}/api/embeddings",
+                f"{self.host}/api/embed",
                 json={"model": self.model, "prompt": text},
                 timeout=30,
             )

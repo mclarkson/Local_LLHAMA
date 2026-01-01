@@ -13,7 +13,7 @@
       "type": "str"
     },
     "ollama_embedding_model": {
-      "value": "embeddinggemma",
+      "value": "embeddinggemma:latest",
       "type": "str"
     }
   },
